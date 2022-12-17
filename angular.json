@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fetch-speacker": {
+    "fetch-speaker": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fetch-speacker",
+            "outputPath": "dist/fetch-speaker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "fetch-speacker:build:production"
+              "browserTarget": "fetch-speaker:build:production"
             },
             "development": {
-              "browserTarget": "fetch-speacker:build:development"
+              "browserTarget": "fetch-speaker:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fetch-speacker:build"
+            "browserTarget": "fetch-speaker:build"
           }
         },
         "test": {
