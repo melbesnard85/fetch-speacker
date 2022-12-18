@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:gh-page": "ng build --output-path dist --base-href /fetch-speaker/", 
+    "build:gh-page": "ng build --output-path dist --base-href /fetch-speaker/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -31,6 +31,7 @@
     "@angular/compiler-cli": "^15.0.0",
     "@tailwindcss/forms": "^0.4.1",
     "@types/jasmine": "~4.3.0",
+    "angular-cli-ghpages": "^1.0.5",
     "autoprefixer": "^10.4.13",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
