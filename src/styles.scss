@@ -3,11 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body { height: 100%; }
 
+body {
+    @apply bg-slate-100;
+}
 * {
 font-family: 'Poppins', sans-serif;
-}
-
-.btn {
-    @apply font-medium h-50 shadow-md bg-sky-600 text-white px-20 flex items-center
 }
