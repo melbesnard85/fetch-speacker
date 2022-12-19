@@ -46,6 +46,13 @@ module.exports = {
         xl: '6rem',
       },
     },
+    fontWeight: {
+      normal: 400,
+      medium: 600,
+      medium: 500,
+      bold: 700,
+      black: 900,
+    },
     fontSize: {
       ...range(minFontSize, maxFontSize).reduce((merged, f) => ({ ...merged, [f]: `${f}px`}), {})
     },
