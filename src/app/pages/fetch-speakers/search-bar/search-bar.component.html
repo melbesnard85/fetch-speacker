@@ -1,0 +1,9 @@
+<form class="w-full flex items-center" [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field class="w-1/2" appearance="outline">
+        <input matInput placeholder="Search speakers..." formControlName="keyword" />
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <div class="ml-15 mb-20">
+        <button mat-raised-button color="primary" class="h-[52px]"><span class="px-20 font-medium">Search</span></button>
+    </div>
+</form>
