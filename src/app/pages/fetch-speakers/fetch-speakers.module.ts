@@ -18,13 +18,15 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { ResultTableComponent } from './result-table/result-table.component';
+import { SpeackerinfoComponent } from './speackerinfo/speackerinfo.component';
 
 
 @NgModule({
   declarations: [
     FetchSpeakersComponent,
     SearchBarComponent,
-    ResultTableComponent
+    ResultTableComponent,
+    SpeackerinfoComponent
   ],
   imports: [
     CommonModule,

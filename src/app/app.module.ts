@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
-import { DetailModule } from './detail/detail.module';
 import { FetchSpeakersModule } from './pages/fetch-speakers/fetch-speakers.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { FetchSpeakersModule } from './pages/fetch-speakers/fetch-speakers.modul
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    DetailModule,
     FetchSpeakersModule
   ],
   providers: [],
