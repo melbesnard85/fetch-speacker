@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailComponent } from './detail.component';
+import { SpeackerinfoComponent } from './speackerinfo.component';
 
-describe('DetailComponent', () => {
-  let component: DetailComponent;
-  let fixture: ComponentFixture<DetailComponent>;
+describe('SpeackerinfoComponent', () => {
+  let component: SpeackerinfoComponent;
+  let fixture: ComponentFixture<SpeackerinfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailComponent ]
+      declarations: [ SpeackerinfoComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DetailComponent);
+    fixture = TestBed.createComponent(SpeackerinfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
