@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { finalize, Subject, takeUntil } from 'rxjs';
+import { finalize, Subject } from 'rxjs';
 import { SearchResult } from 'src/app/core/models/http/http.model';
 import { Speaker } from 'src/app/core/models/http/speaker.model';
 import { TableChange } from 'src/app/core/models/http/table.model';
@@ -12,7 +12,7 @@ import { SpeakerService } from 'src/app/core/services/speaker.service';
   styleUrls: ['./fetch-speakers.component.scss']
 })
 export class FetchSpeakersComponent implements OnInit{
-  constructor(private speakerService: SpeakerService, private snack: MatSnackBar) {}
+  constructor(private speakerService: SpeakerService, private snack: MatSnackBar, private cdRef : ChangeDetectorRef) {}
 
   isLoading = false;
   firstLoaded = false;
@@ -23,6 +23,7 @@ export class FetchSpeakersComponent implements OnInit{
   page: number | undefined;
 
   ngOnInit(): void {
+    this.cdRef.detectChanges();
   }
 
   search(keyword: string) {
@@ -44,7 +45,9 @@ export class FetchSpeakersComponent implements OnInit{
     this.isLoading = true;
     this.speakerService
       .search(this.keyword, this.page, 10)
-      .pipe(finalize(() => {this.isLoading = false}))
+      .pipe(finalize(() => {
+        this.isLoading = false;
+      }))
       .subscribe({
         next: (res) => {
           this.result$.next(res);
