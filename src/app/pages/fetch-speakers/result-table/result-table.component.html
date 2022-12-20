@@ -52,6 +52,7 @@
         mat-row
         (click)="showInfo(row)"
         [class.demo-row-is-clicked]="clickedRows.has(row)"
+        class="cursor-pointer"
         *matRowDef="let row; columns: displayedColumns;"
     ></tr>
 </table>
