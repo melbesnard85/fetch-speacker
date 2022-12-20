@@ -2,20 +2,14 @@
     <mat-card class="profile-card" *ngIf="speaker">
         <mat-card-header>
         <mat-card-title-group>
-            <mat-card-title>{{speaker.name}}</mat-card-title>
+            <mat-card-title>{{speaker.name.first + ' ' + speaker.name.last }}</mat-card-title>
             <mat-card-subtitle>{{speaker.email}}</mat-card-subtitle>
             <mat-card-subtitle>{{speaker.gender}}</mat-card-subtitle>
             <mat-card-subtitle>{{speaker.phone}}</mat-card-subtitle>
-            <img mat-card-lg-image [src]="speaker.picture" >
+            <img mat-card-lg-image [src]="speaker.picture.large" >
         </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
-            <!-- <div>
-                <div>{{speaker.phone}}</div>
-                <div>{{speaker.phone}}</div>
-            </div>
-            <div>{{speaker.phone}}</div>
-            <div>{{speaker.phone}}</div> -->
         </mat-card-content>
     </mat-card>
 </div>

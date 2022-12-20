@@ -1,37 +1,36 @@
-export interface Speaker<T> {
+export interface Speaker {
     cell: string;
-    dob: T[];
+    dob: {
+        age: number;
+        data: string;
+    };
     email: string;
     gender: string;
-    id: T[];
-    location: T[];
-    login: T[];
-    name: T[];
+    id: {
+        name: string;
+        value: string;
+    };
+    location: {
+        city: string;
+        coordinates: {};
+        country: string;
+        postcode: string;
+        state: string;
+    };
+    login: {
+        username: string;
+    };
+    name: {
+        first: string;
+        last: string;
+        title: string;
+    };
     nat: string;
     phone: string;
-    picture: string;
-    registered: T[];
+    picture: {
+        large: string;
+        medium: string;
+        thumbnail: string;
+    };
+    registered: {};
 }
-
-export interface SpeakerSt {
-    cell: string;
-    email: string;
-    gender: string;
-    nat: string;
-    phone: string;
-    picture: string;
-}
-
-export interface SpeakerMp {
-    picture: string;
-    name: string;
-    email: string;
-    gender: string;
-    phone: string;
-}
-
-export const SPEAKERS: SpeakerMp[] = [
-    { picture: "https://randomuser.me/api/portraits/women/21.jpg" , name: 'Hydrogen', email: 'test@test.com', gender: 'male', phone: '+172083789'},
-    { picture: "https://randomuser.me/api/portraits/women/21.jpg" , name: 'Helium', email: 'test@test.com', gender: 'male', phone: '+172083789'},
-    { picture: "https://randomuser.me/api/portraits/women/21.jpg" , name: 'Lithium', email: 'test@test.com', gender: 'male', phone: '+172083789'},
-];

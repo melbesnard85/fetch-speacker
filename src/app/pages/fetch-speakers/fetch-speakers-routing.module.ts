@@ -6,7 +6,7 @@ import { SpeackerinfoComponent } from './speackerinfo/speackerinfo.component';
 
 const routes: Routes = [
   { path: '', component: LayoutComponent, children: [{ path: '', component: FetchSpeakersComponent }] },
-  { path: '', component: LayoutComponent, children: [{ path: 'information/:name', component: SpeackerinfoComponent}]},
+  { path: 'information', component: LayoutComponent, children: [{ path: '', component: SpeackerinfoComponent}]},
 ];
 
 @NgModule({

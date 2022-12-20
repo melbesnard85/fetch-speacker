@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table'; 
 import { Router } from '@angular/router';
-import { SpeakerMp, SPEAKERS } from 'src/app/core/models/http/speaker.model';
+import { Speaker } from 'src/app/core/models/http/speaker.model';
+import { SpeakerService } from 'src/app/core/services/speaker.service';
 
 @Component({
   selector: 'app-result-table',
@@ -10,17 +11,24 @@ import { SpeakerMp, SPEAKERS } from 'src/app/core/models/http/speaker.model';
 })
 export class ResultTableComponent implements OnInit{
   displayedColumns: string[] = ['picture', 'name', 'email', 'gender', 'phone'];
-  dataSource = new MatTableDataSource<SpeakerMp>([]);
-  clickedRows = new Set<SpeakerMp>();
-  selectedSpeaker: SpeakerMp | undefined;
+  dataSource = new MatTableDataSource<Speaker>([]);
+  clickedRows = new Set<Speaker>();
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private speakerService: SpeakerService,
+  ) {}
   ngOnInit(): void {
-    this.dataSource.data = SPEAKERS;
+    this.speakerService.search().subscribe((data: any) => {
+      console.log(data)
+      if (data?.results?.length > 0) {
+        this.dataSource.data = data.results;
+      }
+    });
   }
-  showInfo(data: SpeakerMp) {
-    console.log(data);
-    this.selectedSpeaker = data;
-    this.router.navigate(['/information', this.selectedSpeaker.name]);
+  showInfo(data: Speaker) {
+    console.log( data.name.first);
+    console.log( data.login.username);
+    this.router.navigate(["/information"], {queryParams: {data : JSON.stringify(data)}});
   }
 }

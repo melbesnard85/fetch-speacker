@@ -14,7 +14,9 @@ export class SearchBarComponent implements OnInit {
     keyword: [''],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.form.controls.keyword.valueChanges.pipe(debounceTime(300)).subscribe((value) => this.search.emit(value || ''));
@@ -23,5 +25,9 @@ export class SearchBarComponent implements OnInit {
   submit() {
     console.log(this.form.value.keyword);
     this.search.emit(this.form.value.keyword || '');
+  }
+
+  fetchSpeacker() {
+
   }
 }
