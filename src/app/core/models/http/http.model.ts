@@ -1,4 +1,9 @@
 export interface SearchResult<T> {
-  info: {};
+  info: {
+    page: number;
+    seed: string;
+    results: number;
+    version: string;
+  };
   results: T[];
 }
