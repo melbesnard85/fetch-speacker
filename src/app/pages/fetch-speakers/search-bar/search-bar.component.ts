@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-search-bar',
@@ -19,15 +18,10 @@ export class SearchBarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.form.controls.keyword.valueChanges.pipe(debounceTime(300)).subscribe((value) => this.search.emit(value || ''));
-  }
-
-  submit() {
-    console.log(this.form.value.keyword);
     this.search.emit(this.form.value.keyword || '');
   }
 
-  fetchSpeacker() {
-
+  submit() {
+    this.search.emit(this.form.value.keyword || '');
   }
 }

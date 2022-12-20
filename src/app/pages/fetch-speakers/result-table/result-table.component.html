@@ -1,4 +1,10 @@
-<table mat-table [dataSource]="dataSource" class="w-full">
+<table 
+  mat-table
+  [dataSource]="dataSource"
+  matSort
+  matSortDirection="asc"
+  matSortActive="name"
+  class="w-full">
 
     <!-- Picture Column -->
     <ng-container matColumnDef="picture">
@@ -34,6 +40,12 @@
       <th mat-header-cell *matHeaderCellDef>Phone</th>
       <td mat-cell *matCellDef="let element">{{element.phone}}</td>
     </ng-container>
+
+    <!-- Phone Column -->
+    <ng-container matColumnDef="nat">
+      <th mat-header-cell *matHeaderCellDef>Country</th>
+      <td mat-cell *matCellDef="let element">{{element.nat}}</td>
+    </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr
@@ -44,10 +56,10 @@
     ></tr>
 </table>
 
-<div>
-
-<ul>
-<li *ngFor="let clickedRow of clickedRows">
-    Clicked on {{clickedRow.name}}
-</li>
-</ul>
+<mat-paginator
+  [length]="total"
+  [pageIndex]="page"
+  [pageSize]="perPage"
+  (page)="changePage($event)"
+  aria-label="Select page">
+</mat-paginator>
