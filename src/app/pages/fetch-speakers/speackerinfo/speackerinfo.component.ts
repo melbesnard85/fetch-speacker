@@ -18,7 +18,6 @@ export class SpeackerinfoComponent implements OnInit{
   ) {}
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
-      console.log('params : ', JSON.parse(params['data']));
       this.speaker = JSON.parse(params['data']);
     });
   }

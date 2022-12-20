@@ -19,6 +19,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { ResultTableComponent } from './result-table/result-table.component';
 import { SpeackerinfoComponent } from './speackerinfo/speackerinfo.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { SpeackerinfoComponent } from './speackerinfo/speackerinfo.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    SharedModule
   ]
 })
 
