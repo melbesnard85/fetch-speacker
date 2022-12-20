@@ -35,4 +35,26 @@ describe('SearchBarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render button and label of input box', () => {
+    const fixture = TestBed.createComponent(SearchBarComponent);
+    const searchBarComponent = fixture.componentInstance;
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('button span.font-medium')?.textContent).toContain('Search');
+  });
+
+  it('should send keyword when do search', (done: DoneFn) => {
+    const fixture = TestBed.createComponent(SearchBarComponent);
+    const searchBarComponent = fixture.componentInstance;
+    fixture.detectChanges();
+    searchBarComponent.form.controls.keyword.setValue('melwin');
+
+    searchBarComponent.search.asObservable().subscribe((res) => {
+      expect(res).toContain('melwin');
+      done();
+    });
+
+    searchBarComponent.submit();
+  });
 });
