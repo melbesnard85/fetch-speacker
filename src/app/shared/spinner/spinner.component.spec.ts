@@ -22,4 +22,14 @@ describe('SpinnerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render spinner with text', () => {
+    const fixture = TestBed.createComponent(SpinnerComponent);
+    const spinnerComponent = fixture.componentInstance;
+    spinnerComponent.text = 'Searching...';
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('mat-spinner')).toBeTruthy();
+    expect(compiled.querySelector('p')?.textContent).toContain('Searching...');
+  });
 });
